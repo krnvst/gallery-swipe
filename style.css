@@ -1,0 +1,33 @@
+body {
+    padding: 1rem;
+    margin: 0 auto;
+    /* max-width: 900px; */
+}
+
+.slide {
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .slide img {
+    width: 100%;
+    pointer-events: none;
+} */
+
+.slide-1 {
+    background: #ff7070;
+}
+
+.slide-2 {
+    background: #b8ff8f;
+}
+
+.slide-3 {
+    background: #a7b4ff;
+}
+
+.slide-4 {
+    background: #ff8eff;
+}
