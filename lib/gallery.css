@@ -4,6 +4,11 @@
     -webkit-user-select: none;
 }
 
+.gallery img {
+    width: 100%;
+    pointer-events: none;
+}
+
 .gallery-line {
     overflow: hidden;
 }
@@ -12,6 +17,7 @@
     min-height: 1px;
     float: left;
     transform: translateZ(0);
+    overflow: hidden;
 }
 
 .gallery-draggable {
