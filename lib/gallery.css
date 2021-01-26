@@ -1,6 +1,7 @@
 .gallery {
     width: 100%;
     overflow: hidden;
+    -webkit-user-select: none;
 }
 
 .gallery-line {
@@ -10,4 +11,9 @@
 .gallery-slide {
     min-height: 1px;
     float: left;
+    transform: translateZ(0);
+}
+
+.gallery-draggable {
+    cursor: grabbing;
 }
