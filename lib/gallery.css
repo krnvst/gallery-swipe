@@ -8,10 +8,17 @@
 .gallery img {
     width: 100%;
     pointer-events: none;
+    border-radius: 15px;
+}
+
+.gallery-container-line {
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .gallery-line {
     overflow: hidden;
+    line-height: 0;
 }
 
 .gallery-slide {
@@ -28,6 +35,10 @@
 .gallery-dots {
     display: flex;
     justify-content: center;
+}
+
+.gallery-dots-hidden {
+    display: none;
 }
 
 .gallery-dot {
@@ -56,6 +67,7 @@
     top: 50%;
     width: 100%;
     transform: translateY(-100%);
+    pointer-events: none;
 }
 
 .gallery-nav button {
@@ -63,6 +75,7 @@
     cursor: pointer;
     height: auto;
     transform: translateY(-100%);
+    pointer-events: all;
 }
 
 .gallery-nav button svg {
