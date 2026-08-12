@@ -1,0 +1,131 @@
+.swipe-gallery {
+  --swipe-gallery-border-radius: 0.9375rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.swipe-gallery *,
+.swipe-gallery *::before,
+.swipe-gallery *::after {
+  box-sizing: border-box;
+}
+
+/* Prevent initial slides from flashing as a vertical list before JavaScript runs. */
+.swipe-gallery:not(.swipe-gallery--initialized) > :not(:first-child) {
+  display: none;
+}
+
+.swipe-gallery:not(.swipe-gallery--initialized) > :first-child {
+  display: block;
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+}
+
+.swipe-gallery__viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--swipe-gallery-border-radius);
+}
+
+.swipe-gallery__track {
+  display: flex;
+  width: 100%;
+  touch-action: pan-y pinch-zoom;
+  transition-property: transform;
+  transition-timing-function: ease;
+  will-change: transform;
+}
+
+.swipe-gallery__track--dragging {
+  transition-duration: 0s !important;
+}
+
+.swipe-gallery__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--swipe-gallery-border-radius);
+}
+
+.swipe-gallery__slide > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.swipe-gallery--dragging {
+  cursor: grabbing;
+}
+
+.swipe-gallery__navigation {
+  position: absolute;
+  inset: 50% 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.swipe-gallery__navigation button {
+  display: grid;
+  width: 2rem;
+  height: 3rem;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  color: #111;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.swipe-gallery__arrow-icon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.swipe-gallery__navigation button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.swipe-gallery__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+}
+
+.swipe-gallery__pagination-button {
+  width: 0.625rem;
+  height: 0.625rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+
+.swipe-gallery__pagination-button:hover,
+.swipe-gallery__pagination-button--active {
+  background: #666;
+}
+
+.swipe-gallery [hidden] {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swipe-gallery__track {
+    transition-duration: 0s !important;
+  }
+}

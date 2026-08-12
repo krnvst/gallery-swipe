@@ -1,0 +1,58 @@
+{
+  "name": "gallery-swipe",
+  "version": "1.0.0",
+  "description": "A lightweight, dependency-free and accessible swipe gallery for the browser.",
+  "keywords": [
+    "gallery",
+    "carousel",
+    "slider",
+    "swipe",
+    "touch"
+  ],
+  "license": "MIT",
+  "author": "krnvst",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krnvst/gallery-swipe.git"
+  },
+  "homepage": "https://github.com/krnvst/gallery-swipe#readme",
+  "bugs": {
+    "url": "https://github.com/krnvst/gallery-swipe/issues"
+  },
+  "type": "module",
+  "main": "./dist/gallery.cjs",
+  "module": "./dist/gallery.js",
+  "browser": "./dist/gallery.global.js",
+  "types": "./dist/gallery.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/gallery.d.ts",
+      "import": "./dist/gallery.js",
+      "require": "./dist/gallery.cjs"
+    },
+    "./style.css": "./dist/gallery.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "rollup -c && node scripts/build-assets.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run check",
+    "check": "npm run test && npm run build && npm pack --dry-run --cache .npm-cache"
+  },
+  "devDependencies": {
+    "happy-dom": "^20.11.2",
+    "rollup": "^4.46.2",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
